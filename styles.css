@@ -158,14 +158,14 @@ img {
   outline: none;
 }
 
-.site-nav .nav-github {
+.site-nav .nav-account {
   margin-left: 0.35rem;
   background: var(--text);
   color: var(--bg);
 }
 
-.site-nav .nav-github:hover,
-.site-nav .nav-github:focus-visible {
+.site-nav .nav-account:hover,
+.site-nav .nav-account:focus-visible {
   background: white;
   color: #080708;
 }
@@ -1180,6 +1180,19 @@ h2 span {
   color: var(--accent);
 }
 
+.footer-copy > a {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-copy > a:hover,
+.footer-copy > a:focus-visible {
+  color: var(--text);
+}
+
 .site-footer > a {
   justify-self: end;
   color: var(--muted);
@@ -1276,7 +1289,7 @@ h2 span {
     padding: 0.85rem 1rem;
   }
 
-  .site-nav .nav-github {
+  .site-nav .nav-account {
     margin: 0.3rem 0 0;
   }
 
