@@ -10,5 +10,9 @@ The site is deployed to:
 
 <https://perezhoginviktor.github.io/WSudoku-site/>
 
+The public WSudoku account-deletion resource is deployed to:
+
+<https://perezhoginviktor.github.io/WSudoku-site/delete-account/>
+
 WSudoku is in active development. Store releases, production online services,
-and final privacy/account-deletion pages are not live yet.
+and the final privacy policy are not live yet.
