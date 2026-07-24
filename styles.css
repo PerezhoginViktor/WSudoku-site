@@ -74,6 +74,7 @@ button {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .skip-link {
@@ -334,7 +335,7 @@ h2 span {
 .phone-shell {
   position: relative;
   z-index: 2;
-  width: min(310px, 74vw);
+  width: clamp(19.5rem, 24vw, 21.25rem);
   padding: 0.48rem;
   overflow: hidden;
   transform: rotate(2.2deg);
@@ -362,6 +363,9 @@ h2 span {
 
 .phone-shell img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 420 / 900;
+  object-fit: contain;
   border-radius: 2.02rem;
 }
 
@@ -924,6 +928,9 @@ h2 span {
 
 .theme-showcase img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 900;
+  object-fit: contain;
   border-radius: 1.55rem;
 }
 
@@ -1397,7 +1404,7 @@ h2 span {
   }
 
   .phone-shell {
-    width: 270px;
+    width: min(20rem, calc(100vw - 2.5rem));
   }
 
   .orbit-one {
@@ -1549,7 +1556,7 @@ h2 span {
   }
 
   .phone-shell {
-    width: 250px;
+    width: min(18.75rem, calc(100vw - 2rem));
   }
 
   .orbit-one {
