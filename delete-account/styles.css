@@ -122,6 +122,13 @@ footer {
   text-decoration: none;
 }
 
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
 .hero {
   max-width: 55rem;
   padding: clamp(3rem, 8vw, 7rem) 0 clamp(2.5rem, 6vw, 5rem);
@@ -307,6 +314,10 @@ footer {
   color: var(--muted);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
+}
+
+footer a {
+  color: inherit;
 }
 
 @media (max-width: 47rem) {
