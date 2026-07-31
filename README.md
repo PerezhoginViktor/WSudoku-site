@@ -14,5 +14,6 @@ The public WSudoku account-deletion resource is deployed to:
 
 <https://perezhoginviktor.github.io/WSudoku-site/delete-account/>
 
-WSudoku is in active development. Store releases, production online services,
-and the final privacy policy are not live yet.
+The paid Windows and Linux builds are distributed through Steam. The Steam
+store listing is awaiting public release. Android currently has a separate,
+debug-signed test APK and is not presented as a desktop download.

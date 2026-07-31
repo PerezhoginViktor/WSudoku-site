@@ -1,61 +1,51 @@
-const header = document.querySelector("[data-header]");
+const header = document.querySelector(".site-header");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
+const mobileNavigation = window.matchMedia("(max-width: 48rem)");
 
-const updateHeader = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 24);
-};
-
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
-
-navToggle?.addEventListener("click", () => {
-  const open = navToggle.getAttribute("aria-expanded") !== "true";
-  navToggle.setAttribute("aria-expanded", String(open));
-  navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-  nav?.classList.toggle("is-open", open);
-});
-
-nav?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navToggle?.setAttribute("aria-expanded", "false");
-    navToggle?.setAttribute("aria-label", "Open navigation");
-    nav.classList.remove("is-open");
-  });
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") {
+const setNavigationOpen = (open, returnFocus = false) => {
+  if (!nav || !navToggle) {
     return;
   }
 
-  navToggle?.setAttribute("aria-expanded", "false");
-  navToggle?.setAttribute("aria-label", "Open navigation");
-  nav?.classList.remove("is-open");
+  nav.classList.toggle("is-open", open);
+  navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+
+  if (!open && returnFocus) {
+    navToggle.focus();
+  }
+};
+
+navToggle?.addEventListener("click", () => {
+  const open = navToggle.getAttribute("aria-expanded") !== "true";
+  setNavigationOpen(open);
 });
 
-const reveals = document.querySelectorAll(".reveal");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+nav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => setNavigationOpen(false));
+});
 
-if (reduceMotion || !("IntersectionObserver" in window)) {
-  reveals.forEach((element) => element.classList.add("is-visible"));
+document.addEventListener("pointerdown", (event) => {
+  if (
+    mobileNavigation.matches &&
+    navToggle?.getAttribute("aria-expanded") === "true" &&
+    !header?.contains(event.target)
+  ) {
+    setNavigationOpen(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navToggle?.getAttribute("aria-expanded") === "true") {
+    setNavigationOpen(false, true);
+  }
+});
+
+const resetNavigation = () => setNavigationOpen(false);
+
+if (typeof mobileNavigation.addEventListener === "function") {
+  mobileNavigation.addEventListener("change", resetNavigation);
 } else {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "0px 0px -8% 0px",
-      threshold: 0.08,
-    },
-  );
-
-  reveals.forEach((element) => observer.observe(element));
+  mobileNavigation.addListener(resetNavigation);
 }
