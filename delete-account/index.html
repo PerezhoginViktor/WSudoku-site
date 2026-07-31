@@ -25,7 +25,10 @@
         </span>
         <span>KVASS GAMES</span>
       </a>
-      <a class="back-link" href="../">WSudoku home</a>
+      <nav class="header-links" aria-label="Related pages">
+        <a class="back-link" href="../privacy/">Privacy policy</a>
+        <a class="back-link" href="../">WSudoku home</a>
+      </nav>
     </header>
 
     <main id="main">
@@ -114,25 +117,29 @@
           <div>
             <dt>Data stored only on your device</dt>
             <dd>
-              An outside-app request cannot reach local files. Clear WSudoku's
-              app storage or uninstall it to remove local language, audio,
-              display, privacy, and consent settings.
+              An outside-app request cannot directly reach local files on an
+              offline device. If WSudoku later reconnects and detects the
+              recorded deletion, it clears its known account-profile and score
+              files. Otherwise those files can remain until you clear WSudoku's
+              app storage or uninstall it; doing so also removes local language,
+              audio, display, privacy, and consent settings.
             </dd>
           </div>
           <div>
             <dt>Store entitlement</dt>
             <dd>
-              A Remove Ads purchase entitlement may remain with Google Play so
-              an eligible purchase can be restored. It is not used as a
-              WSudoku public profile.
+              WSudoku's local owned/not-owned Remove Ads flag remains until app
+              storage is cleared or the app is uninstalled. Google Play
+              separately retains purchase or transaction data under its
+              controls so an eligible purchase can be restored.
             </dd>
           </div>
           <div>
             <dt>Recorded deletion identifier</dt>
             <dd>
-              Nakama may retain the deleted account's internal identifier only
-              so the deletion can be applied again if an older backup is ever
-              restored. It is not an active game account.
+              WSudoku's backend may retain the deleted account's internal
+              identifier only so the deletion can be applied again if an older
+              backup is ever restored. It is not an active game account.
             </dd>
           </div>
           <div>
@@ -145,9 +152,11 @@
           </div>
         </dl>
         <p class="small">
-          Data that another provider processes independently, such as Google
-          Play transaction records, is governed by that provider's account and
-          retention controls.
+          WSudoku deletion does not remove Steam-native leaderboard entries,
+          Steam achievements, Steam profile data, or Google Play transaction
+          records. Valve and Google govern that data through their own account
+          and retention controls; see the
+          <a href="../privacy/">WSudoku privacy policy</a> for details.
         </p>
       </section>
 
@@ -160,14 +169,16 @@
             Perezhoginviktor@proton.me
           </a>
           and use the subject <strong>WSudoku account deletion</strong>.
+          See the <a href="../privacy/">WSudoku privacy policy</a> for the
+          complete explanation of how game and account data is handled.
         </p>
       </section>
     </main>
 
     <footer>
       <span>© 2026 Kvass Games</span>
-      <span>WSudoku account deletion</span>
-      <span>Last updated: 25 July 2026</span>
+      <a href="../privacy/">Privacy policy</a>
+      <span>Last updated: 31 July 2026</span>
     </footer>
   </body>
 </html>
