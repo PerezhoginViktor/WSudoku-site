@@ -296,6 +296,10 @@ main,
   text-align: center;
 }
 
+.steam-mark::before {
+  content: "\f1b6";
+}
+
 .store-note {
   margin: 1rem 0 0;
   color: var(--quiet);
