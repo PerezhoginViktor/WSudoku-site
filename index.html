@@ -3,380 +3,258 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#141112">
+    <meta name="theme-color" content="#101412">
     <meta
       name="description"
-      content="WSudoku is a calm, modern Sudoku game by Kvass Games, built in C++20 with SDL3 for Linux, Android, and future desktop platforms."
+      content="WSudoku is a Sudoku game for Windows and Linux with five difficulties, daily puzzles, leaderboards, unlockable themes, achievements, and online duels."
     >
-    <meta property="og:title" content="WSudoku — a quiet challenge">
+    <meta property="og:title" content="WSudoku on Steam">
     <meta
       property="og:description"
-      content="A focused, cross-platform Sudoku game with tactile controls, expressive themes, and head-to-head battles."
+      content="Five difficulties, daily puzzles, online duels, leaderboards, achievements, and unlockable themes."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://perezhoginviktor.github.io/WSudoku-site/">
     <meta
       property="og:image"
-      content="https://perezhoginviktor.github.io/WSudoku-site/assets/wsudoku-themes.png"
+      content="https://perezhoginviktor.github.io/WSudoku-site/assets/wsudoku-steam.jpg"
     >
     <meta name="twitter:card" content="summary_large_image">
-    <title>WSudoku — A quiet challenge</title>
+    <title>WSudoku — Sudoku for Windows and Linux</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add("js");</script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" data-header>
-      <a class="wordmark" href="#top" aria-label="WSudoku home">
-        <span class="wordmark-w">W</span><span>Sudoku</span>
-      </a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#top" aria-label="WSudoku home">
+          <span aria-hidden="true">W</span>Sudoku
+        </a>
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        data-nav-toggle
-      >
-        <span></span>
-        <span></span>
-      </button>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-nav-toggle
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
 
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
-        <a href="#game">Game</a>
-        <a href="#battle">Battles</a>
-        <a href="#themes">Themes</a>
-        <a href="#platforms">Platforms</a>
-        <a
-          class="nav-account"
-          href="delete-account/"
-        >Account &amp; data <span aria-hidden="true">→</span></a>
-      </nav>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#support">Support</a>
+          <a
+            class="nav-steam"
+            href="https://store.steampowered.com/app/5025470/"
+          >Steam — soon <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
-
-        <div class="hero-copy reveal">
-          <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span>
-            In active development
-          </p>
-          <h1>Sudoku,<br><span>without the noise.</span></h1>
+        <div class="hero-copy">
+          <p class="eyebrow">Windows &amp; Linux via Steam</p>
+          <h1>WSudoku</h1>
           <p class="hero-lede">
-            A quiet, tactile take on the classic grid. Built to feel at home on
-            a phone, a Linux desktop, and everywhere the puzzle goes next.
+            Classic Sudoku with five difficulty levels, a shared daily puzzle,
+            online duels, leaderboards, achievements, and unlockable themes.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#game">
-              Explore the game
-              <span aria-hidden="true">↓</span>
-            </a>
             <a
-              class="button button-quiet"
-              href="delete-account/"
+              class="button button-steam"
+              href="https://store.steampowered.com/app/5025470/"
             >
-              Account &amp; data
-              <span aria-hidden="true">→</span>
+              <span class="steam-mark" aria-hidden="true"></span>
+              Steam page — coming soon
+            </a>
+            <a class="button button-secondary" href="#screenshots">
+              See the game
             </a>
           </div>
-          <dl class="hero-stats" aria-label="Project highlights">
-            <div>
-              <dt>5</dt>
-              <dd>difficulty tiers</dd>
-            </div>
-            <div>
-              <dt>22+</dt>
-              <dd>locale options</dd>
-            </div>
-            <div>
-              <dt>2</dt>
-              <dd>verified targets</dd>
-            </div>
-          </dl>
+          <p class="store-note">
+            Steam build ready. The public store listing is awaiting release.
+          </p>
         </div>
 
-        <div class="hero-visual reveal" data-delay="1">
-          <div class="orbit orbit-one" aria-hidden="true"></div>
-          <div class="orbit orbit-two" aria-hidden="true"></div>
-          <div class="phone-shell">
-            <div class="phone-speaker" aria-hidden="true"></div>
-            <img
-              src="assets/wsudoku-gameplay.png"
-              width="420"
-              height="900"
-              alt="WSudoku portrait gameplay showing a dark red Sudoku board, number pad, and tool buttons"
-            >
-          </div>
-          <div class="floating-note floating-note-top">
-            <span class="mini-grid" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </span>
-            Portrait first
-          </div>
-          <div class="floating-note floating-note-bottom">
-            <strong>C++20</strong>
-            <span>SDL3 engine</span>
-          </div>
-        </div>
+        <figure class="hero-media">
+          <img
+            src="assets/wsudoku-steam.jpg"
+            width="1232"
+            height="706"
+            alt="WSudoku key art with a crimson Sudoku board"
+          >
+        </figure>
       </section>
 
-      <section class="section section-game" id="game">
-        <div class="section-heading reveal">
-          <p class="eyebrow">The grid comes first</p>
-          <h2>Everything useful.<br><span>Nothing in the way.</span></h2>
-          <p>
-            Every interaction is designed around reading the board quickly and
-            keeping your train of thought intact.
-          </p>
+      <section class="section features" id="features">
+        <div class="section-intro">
+          <p class="eyebrow">What is in the game</p>
+          <h2>Sudoku for solo play and competition.</h2>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card feature-card-large reveal">
-            <div class="feature-number">01</div>
-            <div class="feature-icon grid-icon" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </div>
-            <h3>A clearer board</h3>
+          <article>
+            <span class="feature-icon" aria-hidden="true">9</span>
+            <h3>Solo puzzles</h3>
             <p>
-              Dashed cell guides, exact 3 × 3 separators, matching-number
-              highlights, and plain player-entered digits keep the puzzle calm.
-            </p>
-            <div class="board-sample" aria-hidden="true">
-              <span>8</span><span></span><span>7</span>
-              <span>6</span><span>3</span><span></span>
-              <span></span><span>1</span><span>5</span>
-            </div>
-          </article>
-
-          <article class="feature-card reveal" data-delay="1">
-            <div class="feature-number">02</div>
-            <div class="feature-symbol" aria-hidden="true">✦</div>
-            <h3>Small, smooth details</h3>
-            <p>
-              Subtle motion responds to touch, mouse, keyboard, and gamepad
-              without moving the controls out from under you.
+              Play Easy through Master with pencil marks, hints, undo, redo,
+              and clear mistake feedback.
             </p>
           </article>
-
-          <article class="feature-card reveal" data-delay="2">
-            <div class="feature-number">03</div>
-            <div class="feature-symbol feature-symbol-pencil" aria-hidden="true">╱</div>
-            <h3>Tools that stay quiet</h3>
+          <article>
+            <span class="feature-icon feature-icon-calendar" aria-hidden="true">24</span>
+            <h3>Daily &amp; scores</h3>
             <p>
-              Pencil marks, undo and redo, optional assistance, scoring, and
-              personal bests are close when needed and invisible when not.
+              Solve a shared daily grid and compare personal and global
+              leaderboard results.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon feature-icon-versus" aria-hidden="true">VS</span>
+            <h3>Online duels</h3>
+            <p>
+              Join Quick Play or a private room and race another player on the
+              same puzzle.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon feature-icon-frame" aria-hidden="true"></span>
+            <h3>Make it yours</h3>
+            <p>
+              Unlock color themes, profile frames, and achievements as you
+              keep playing.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="section battle-section" id="battle">
-        <div class="battle-copy reveal">
-          <p class="eyebrow">Same puzzle. Same moment.</p>
-          <h2>A thoughtful duel,<br><span>not a noisy one.</span></h2>
-          <p>
-            Private five-character rooms and Quick Play use synchronized,
-            authoritative matches. Both players ready up, share a countdown,
-            and race on the exact same grid.
-          </p>
-          <ul class="check-list">
-            <li>Live completion progress</li>
-            <li>Mutual rematches</li>
-            <li>Cross-platform architecture</li>
-          </ul>
-          <p class="development-note">
-            Online systems are built and locally verified. Public server rollout
-            is still in progress.
-          </p>
-        </div>
-
-        <div class="battle-card reveal" data-delay="1" aria-label="Battle lobby concept">
-          <div class="battle-card-header">
-            <span>Private battle</span>
-            <span class="live-pill">Lobby</span>
-          </div>
-          <div class="room-code">
-            <small>Room code</small>
-            <strong>5DO9D</strong>
-            <span class="copy-mark" aria-hidden="true">▣</span>
-          </div>
-          <div class="rival">
-            <div class="player-avatar player-avatar-you">
-              <span class="mini-grid" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </span>
-            </div>
-            <div class="player-copy">
-              <strong>You</strong>
-              <span>Ready</span>
-            </div>
-            <div class="versus">VS</div>
-            <div class="player-copy player-copy-right">
-              <strong>Rival</strong>
-              <span>Ready</span>
-            </div>
-            <div class="player-avatar player-avatar-rival">R</div>
-          </div>
-          <div class="progress-row">
-            <span>You</span>
-            <div class="progress-track"><i style="width: 74%"></i></div>
-            <strong>74%</strong>
-          </div>
-          <div class="progress-row rival-progress">
-            <span>Rival</span>
-            <div class="progress-track"><i style="width: 61%"></i></div>
-            <strong>61%</strong>
-          </div>
-          <div class="countdown" aria-hidden="true">
-            <span></span><span class="active"></span><span></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section themes-section" id="themes">
-        <div class="section-heading section-heading-centered reveal">
-          <p class="eyebrow">Make the grid yours</p>
-          <h2>Color with restraint.</h2>
-          <p>
-            Aurum, Crimson, Ocean, and Forest each come in OLED Friendly, Dark,
-            and Light variants—with quiet backgrounds and profile frames earned
-            along the way.
-          </p>
-        </div>
-
-        <div class="theme-showcase reveal">
-          <div class="theme-dots" aria-hidden="true">
-            <span class="theme-aurum"></span>
-            <span class="theme-crimson"></span>
-            <span class="theme-ocean"></span>
-            <span class="theme-forest"></span>
-          </div>
-          <img
-            src="assets/wsudoku-themes.png"
-            width="1440"
-            height="900"
-            loading="lazy"
-            alt="WSudoku Themes screen showing four color families and OLED, dark, and light variants"
-          >
-        </div>
-      </section>
-
-      <section class="section platforms-section" id="platforms">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Made to travel</p>
-          <h2>One focused engine.<br><span>More than one screen.</span></h2>
-          <p>
-            Shared C++ game code keeps the experience consistent while small
-            platform layers handle windows, touch, haptics, and mobile services.
-          </p>
-        </div>
-
-        <div class="platform-list">
-          <article class="platform-row reveal">
-            <div class="platform-index">01</div>
-            <div>
-              <h3>Linux</h3>
-              <p>Arch development and release builds verified</p>
-            </div>
-            <span class="platform-state verified">Verified</span>
-          </article>
-          <article class="platform-row reveal" data-delay="1">
-            <div class="platform-index">02</div>
-            <div>
-              <h3>Android</h3>
-              <p>SDLActivity debug APK and native libraries verified</p>
-            </div>
-            <span class="platform-state verified">Verified</span>
-          </article>
-          <article class="platform-row reveal" data-delay="2">
-            <div class="platform-index">03</div>
-            <div>
-              <h3>Windows</h3>
-              <p>Native build and packaging path prepared</p>
-            </div>
-            <span class="platform-state">Prepared</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section engine-section">
-        <div class="engine-panel reveal">
+      <section class="section screenshots" id="screenshots">
+        <div class="section-intro section-intro-row">
           <div>
-            <p class="eyebrow">Built for this game</p>
-            <h2>Lightweight on purpose.</h2>
+            <p class="eyebrow">Screenshots</p>
+            <h2>The actual game.</h2>
           </div>
           <p>
-            WSudoku uses C++20, SDL3, CMake, and Ninja. Its small 2D engine owns
-            only what the game needs: rendering, input, audio, animation, UI,
-            assets, saves, and networking.
+            Fresh captures from the current desktop build, with no fabricated
+            interface mockups.
           </p>
-          <div class="tech-stack" aria-label="Technology stack">
-            <span>C++20</span>
-            <span>SDL3</span>
-            <span>CMake</span>
-            <span>Ninja</span>
-            <span>Nakama</span>
-          </div>
+        </div>
+
+        <div class="screenshot-grid">
+          <figure class="screenshot-wide">
+            <img
+              src="assets/wsudoku-gameplay-wide.png"
+              width="1920"
+              height="1080"
+              loading="lazy"
+              alt="WSudoku Hard puzzle on desktop with number pad and puzzle tools"
+            >
+            <figcaption>Hard difficulty with the full desktop tool row.</figcaption>
+          </figure>
+          <figure class="screenshot-wide">
+            <img
+              src="assets/wsudoku-themes-wide.png"
+              width="1920"
+              height="1080"
+              loading="lazy"
+              alt="WSudoku theme browser showing ten color families"
+            >
+            <figcaption>Ten theme families with OLED, dark, and light variants.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="final-cta">
-        <div class="final-mark" aria-hidden="true">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
+      <section class="section platforms" id="platforms">
+        <div class="section-intro">
+          <p class="eyebrow">Platforms</p>
+          <h2>Choose the right version.</h2>
+          <p>
+            Desktop builds are distributed through Steam. The Android test APK
+            is a separate build and is never used for Windows or Linux.
+          </p>
         </div>
-        <p class="eyebrow reveal">Take your time</p>
-        <h2 class="reveal">The next grid is taking shape.</h2>
-        <p class="reveal">
-          WSudoku is in active development. Contact Kvass Games for support, or
-          use the public account page to request deletion of your data.
-        </p>
-        <div class="hero-actions final-actions reveal">
-          <a
-            class="button button-primary"
-            href="delete-account/"
-          >
-            Account &amp; data
-            <span aria-hidden="true">→</span>
-          </a>
-          <a
-            class="button button-quiet"
-            href="mailto:Perezhoginviktor@proton.me?subject=WSudoku%20support"
-          >
-            Contact Kvass Games
-            <span aria-hidden="true">↗</span>
-          </a>
+
+        <div class="platform-grid">
+          <article class="platform-card platform-card-primary">
+            <div class="platform-heading">
+              <div>
+                <p class="platform-label">Full game</p>
+                <h3>Windows &amp; Linux</h3>
+              </div>
+              <span class="platform-badge">Steam</span>
+            </div>
+            <p>
+              The paid desktop version includes Steam profiles, leaderboards,
+              achievements, and online play.
+            </p>
+            <a
+              class="button button-steam"
+              href="https://store.steampowered.com/app/5025470/"
+            >
+              <span class="steam-mark" aria-hidden="true"></span>
+              Steam page — coming soon
+            </a>
+          </article>
+
+          <article class="platform-card">
+            <div class="platform-heading">
+              <div>
+                <p class="platform-label">Test build</p>
+                <h3>Android</h3>
+              </div>
+              <span class="platform-badge platform-badge-muted">APK</span>
+            </div>
+            <p>
+              Android currently uses a debug-signed test APK. Contact Kvass
+              Games if you are part of testing and need the current file.
+            </p>
+            <a
+              class="button button-secondary"
+              href="mailto:Perezhoginviktor@proton.me?subject=WSudoku%20Android%20test%20APK"
+            >Request test APK</a>
+          </article>
         </div>
+      </section>
+
+      <section class="steam-cta" aria-labelledby="steam-title">
+        <div>
+          <p class="eyebrow">Windows &amp; Linux</p>
+          <h2 id="steam-title">WSudoku on Steam.</h2>
+          <p>The full desktop builds are ready. The public listing is the next step.</p>
+        </div>
+        <a
+          class="button button-steam button-large"
+          href="https://store.steampowered.com/app/5025470/"
+        >
+          <span class="steam-mark" aria-hidden="true"></span>
+          Steam page — coming soon
+        </a>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="studio">
-        <img
-          src="assets/kvass-games-mark.png"
-          width="497"
-          height="1024"
-          loading="lazy"
-          alt=""
-        >
-        <div>
-          <strong>Kvass Games</strong>
-          <span>Independent game studio</span>
-        </div>
+    <footer class="site-footer" id="support">
+      <div class="footer-brand">
+        <a class="wordmark" href="#top" aria-label="Back to the top">
+          <span aria-hidden="true">W</span>Sudoku
+        </a>
+        <p>Made by Kvass Games.</p>
       </div>
-      <div class="footer-copy">
-        <strong><span>W</span>Sudoku</strong>
-        <p>Active development build. Features and availability may change.</p>
+      <div class="footer-links">
+        <a href="mailto:Perezhoginviktor@proton.me?subject=WSudoku%20support">Support</a>
         <a href="delete-account/">Account &amp; data deletion</a>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
-      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      <p class="copyright">© 2026 Kvass Games</p>
     </footer>
   </body>
 </html>
